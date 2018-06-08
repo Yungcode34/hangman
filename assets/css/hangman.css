@@ -1,0 +1,20 @@
+html,
+body{
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+#container{
+    border-style: dashed;
+}
+.col-md-4{
+    border-bottom-style: dashed;
+    border-left-style: dashed;
+    background-image:url("assets/images/media.jpg");
+}
+.col-md-8{
+
+}
+answer{
+    color: black;
+}
