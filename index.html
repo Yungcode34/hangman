@@ -1,69 +1,20 @@
- <!DOCTYPE html>
-<html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-
-    <script>
-        var randomWordArr = ["javascript","bacon","beer","programming","gaming","webdev","awesome"]
-var randomWord = randomWordArr[Math.floor(Math.random() * randomWordArr.length)];
-
-var s;
-var count = 0;
-var answerArray = [];
-var remainingLetters = randomWordAarr.length;
-
-function startUp()
-{
-        for (var i = 0; i < randomWord.length; i++)
-        {
-            answerArray[i] = "_";
-        }
-        s = answerArray.join(" ");
-        document.getElementById("answer").innerHTML = s;
-    
-}
-
-function Letter()
-{
-    var letter = document.getElementById("letter").value;
-
-    if (letter.length > 0)
-    {   
-     for (var i = 0; i < randomWord.length; i++)
-     {
-         if (randomWord[i] === letter)
-     {
-        answerArray[i] = letter;
-     }
-    }
-    count++;
-    document.getElementById("counter").innerHTML = "number of clicks: " + count;
-    document.getElementById("answer").innerHTML = answerArray.join(" ");
-}
-if(count>13)
-{
-    document.getElementById("stat").innerHTML = "YOU LOST...";
-}
-}
-
-    </script>
-    <body onload="startUp()" style="background-color: hotpink;">
-        <div id="gameArea" style="position: relative;left: 480px; width: 225px; height: 255px; background-color: violet; border-style: dashed;padding: 20px;">
-               <h1>
-                    GUESS A LETTER
-                </h1>
-                <input id="letter" type="text">
-                <input type="button" value="letter" onClick="Letter()"/>
-                <p id="answer"></p>
-                <p id="counter"></p>
-                <p id="stat"></p>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/hangman.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>GUESS A LETTER</h1>
+            <h2 id="word-blank"></h2>
+            <p>Guesses to go: <span id="guesses-left"></span></p>
+            <p>Wrong Guesses: <span id="wrong-guesses"></span></p>
+            <p>Player Wins: <span id="win-counter"></span></p>
+            <p>Player Losses: <span id="loss-counter"></span></p>
+        
+            <script src="./assets/javascript/game.js"></script> 
         </div>
-    
-</body>
-</html>
+    </body>
+    </html>
